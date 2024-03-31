@@ -136,7 +136,9 @@ def parse_data_sources(
         (pretrain_data, SampleType.PRETRAIN),
         (instruct_data, SampleType.INSTRUCT),
     ]:
+        print("===============================", sample_sources, sample_type)
         for source in [src for src in sample_sources.split(",") if src]:
+            print("=== what is source ===", source)
             path_, weight_ = source.strip().split(":")
             weight = float(weight_)
             assert path_ not in seen, path_
